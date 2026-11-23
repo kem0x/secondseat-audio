@@ -14,4 +14,17 @@ The download is a standalone, unsigned Windows x64 executable. Bluetooth audio c
 
 If you run into a problem, [open an issue](https://github.com/kem0x/secondseat-audio/issues/new) with your Windows version, both device models, and what happened.
 
+## Build from source
+
+On Windows with the .NET 10 SDK, run this from the repository root in PowerShell.
+
+```powershell
+dotnet publish .\src\SecondSeatAudio.csproj -c Release -r win-x64 --self-contained `
+  -p:RuntimeFrameworkVersion=10.0.15 -p:PublishSingleFile=true `
+  -p:IncludeNativeLibrariesForSelfExtract=true -p:EnableCompressionInSingleFile=true `
+  -p:DebugType=None -p:DebugSymbols=false -o .\publish
+```
+
+The standalone executable is `publish/SecondSeatAudio.exe`.
+
 [Third-party notices](THIRD-PARTY-NOTICES.md)

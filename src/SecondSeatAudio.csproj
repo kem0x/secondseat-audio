@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>SecondSeatAudio</AssemblyName>
+    <ApplicationIcon>SpeakerAudioMirror.ico</ApplicationIcon>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <Version>0.1.0-beta</Version>
+    <Product>SecondSeat Audio</Product>
+    <Description>Share Windows audio with a second output.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="NAudio.Wasapi" Version="2.2.1" />
+    <EmbeddedResource Include="../notices/NAudio-License.txt" Link="NAudio-License.txt" />
+    <EmbeddedResource Include="../notices/DotNet-*.txt;../notices/WindowsDesktop-License.txt"
+                      Link="RuntimeNotices/%(Filename)%(Extension)" />
+  </ItemGroup>
+</Project>
